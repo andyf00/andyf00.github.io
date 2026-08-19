@@ -347,6 +347,7 @@ form input, form textarea {
     color: #fff;
     font-size: 18px;
     border-radius: 6px;
+    resize: vertical;
 }
 
 form .btn2 {
