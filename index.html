@@ -173,17 +173,26 @@
         const form = document.forms['submit-to-google-sheet']
         const msg = document.getElementById("msg")
 
-        form.addEventListener('submit', e => {
-            e.preventDefault()
+        form.addEventListener('submit', event => {
+            event.preventDefault()
             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
             .then(response => {
+                if (!response.ok) {
+                    throw new Error("Something went wrong");
+                }
+                
                 msg.innerHTML = "Message sent successfully"
-                setTimeout(function() {
+
+                setTimeout(() => {
                     msg.innerHTML = ""
                 }, 5000)
+                
                 form.reset()
             })
-            .catch(error => console.error('Error!', error.message))
+            .catch(error => {
+                console.error('Error!', error.message);
+                msg.innerHTML = "Something went wrong. Please try again.";
+            })
         })
     </script>
 
