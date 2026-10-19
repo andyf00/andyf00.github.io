@@ -18,7 +18,7 @@ body {
 #header {
     width: 100%;
     height: 100vh;
-    background-image: url(images/background.jpg);
+    background-image: url(images/dark-geometric-background.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -84,6 +84,10 @@ nav ul li a:hover::after {
 #about {
     padding: 80px 0;
     color: #ababab;
+}
+
+.about-image {
+    max-width: 50vh;
 }
 
 .row {
@@ -202,8 +206,8 @@ nav ul li a:hover::after {
     transform: translateY(-10px);
 }
 
-/* -----portfolio----- */
-#portfolio {
+/* -----projects----- */
+#projects {
     padding: 50px 0;
 }
 
@@ -377,7 +381,7 @@ nav .fa-solid {
 
 @media only screen and (max-width: 600px) {
     #header {
-        background-image: url(images/background.jpg); /* image for a phone sized screen */
+        background-image: url(images/dark-geometric-background.jpg); /* image for a phone sized screen */
     }
     .header-text {
         margin-top: 100%;
